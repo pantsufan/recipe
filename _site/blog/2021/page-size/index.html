@@ -1,0 +1,7 @@
+<p>A few days back, I came across the <a href="https://512kb.club/">512KB club</a> that lists websites whose uncompressed page size is less than 512KB. I decided to give it a try. To my surprise, my page size was just under 400KB but, I wasn't thrilled with the result. So I decided to cut down even more so, I set out on this adventurous journey of reducing my page size.</p>
+<p><img src="https://i.postimg.cc/hjgSs1KQ/prev-min.png" alt="Previous page size"></p>
+<p>I got rid of unwanted JavaScript code and CSS that helped me reduce the page size by 40-50 KB. I wasn't thrilled enough so, I got back again to debug what was causing the enormous page size. Luckily, I got my answer, and that was my favicon.</p>
+<p>A favicon is a small, iconic image that represents your website. My blog's favicon was taking around 300 KB, due to which every time I requested my blog, the favicon was adding its extra size to the final page size. Upon discovering this issue, I redid my favicon as 32x32 instead of the previous 256x256.</p>
+<p>The indicated fix massively improved the page size. Now, my blog's uncompressed page size is 22.8 KB compared to the original 335.6 KB.</p>
+<p><img src="https://i.postimg.cc/3J7DYCKL/new-Result-min.png" alt="Current page size"></p>
+<p>Sometimes the solution to our problem is right in front of us but, we don't attempt to look at it thereby, wasting time and energy on something different.</p>
