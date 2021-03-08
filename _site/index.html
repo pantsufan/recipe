@@ -13,24 +13,79 @@
       <p>Find Recipes Without Bloat</p>
       <nav>
         <a href="/">Home</a>
+        <a href="/search">Search</a>
         <a href="/about">About</a>
       </nav>
     </header>
     <main>
       <h1>All Recipes</h1>
 <ul>
-<li><a href="/recipe/2021/Bebinca-Recipe/">Bebinca Recipe</a>
-<small>Wed, Feb 03, 21</small></li>
+<li>
+<p><a href="/recipe/2021/No-bake-Chocolate-Cheesecake/">No-bake chocolate cheesecake</a>
+<small>Mon, Mar 08, 21</small></p>
+</li>
+<li>
+<p><a href="/recipe/2021/molasses-cookies-recipe/">Molasses Cookies</a>
+<small>Sun, Mar 07, 21</small></p>
+</li>
+<li>
+<p><a href="/recipe/2021/Goan-Fish-Curry-Recipe/">Goan Fish Curry Recipe</a>
+<small>Sun, Mar 07, 21</small></p>
+</li>
+<li>
+<p><a href="/recipe/2021/Bebinca-Recipe/">Bebinca Recipe</a>
+<small>Wed, Feb 03, 21</small></p>
+</li>
 </ul>
 <div style="display: flex;
   flex-flow: row wrap;
   justify-content: space-between;"></div>
 
     </main>
-    <footer>
-      <span>A Community Project</span>
-      <br />
-      <span>Made using 11ty</span>
-    </footer>
   </body>
+  <!-- Script for searching -->
+  <script type="text/javascript">
+    (function (window, document) {
+      "use strict";
+
+      const search = (e) => {
+        const results = window.searchIndex.search(e.target.value, {
+          bool: "OR",
+          expand: true,
+        });
+
+        const resEl = document.getElementById("searchResults");
+        const noResultsEl = document.getElementById("noResultsFound");
+
+        resEl.innerHTML = "";
+        if (results) {
+          results.map((r) => {
+            const { id, title } = r.doc;
+            const el = document.createElement("li");
+            resEl.appendChild(el);
+
+            const h4 = document.createElement("h4");
+            el.appendChild(h4);
+
+            const a = document.createElement("a");
+            a.setAttribute("href", id);
+            a.textContent = title;
+            h4.appendChild(a);
+          });
+        } else {
+          noResultsEl.style.display = "block";
+        }
+      };
+
+      fetch("/search-index.json").then((response) =>
+        response.json().then((rawIndex) => {
+          window.searchIndex = elasticlunr.Index.load(rawIndex);
+          document
+            .getElementById("searchField")
+            .addEventListener("input", search);
+        })
+      );
+    })(window, document);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
 </html>

@@ -13,6 +13,7 @@
       <p>{{ tagline }}</p>
       <nav>
         <a href="/">Home</a>
+        <a href="/search">Search</a>
         <a href="/about">About</a>
       </nav>
     </header>
@@ -20,4 +21,49 @@
       {{ content }}
     </main>
   </body>
+  <!-- Script for searching -->
+  <script type="text/javascript">
+    (function (window, document) {
+      "use strict";
+
+      const search = (e) => {
+        const results = window.searchIndex.search(e.target.value, {
+          bool: "OR",
+          expand: true,
+        });
+
+        const resEl = document.getElementById("searchResults");
+        const noResultsEl = document.getElementById("noResultsFound");
+
+        resEl.innerHTML = "";
+        if (results) {
+          results.map((r) => {
+            const { id, title } = r.doc;
+            const el = document.createElement("li");
+            resEl.appendChild(el);
+
+            const h4 = document.createElement("h4");
+            el.appendChild(h4);
+
+            const a = document.createElement("a");
+            a.setAttribute("href", id);
+            a.textContent = title;
+            h4.appendChild(a);
+          });
+        } else {
+          noResultsEl.style.display = "block";
+        }
+      };
+
+      fetch("/search-index.json").then((response) =>
+        response.json().then((rawIndex) => {
+          window.searchIndex = elasticlunr.Index.load(rawIndex);
+          document
+            .getElementById("searchField")
+            .addEventListener("input", search);
+        })
+      );
+    })(window, document);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
 </html>
