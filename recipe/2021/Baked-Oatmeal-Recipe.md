@@ -7,17 +7,22 @@ date: 2021-03-08
 
 ![Oatmeal](https://live.staticflickr.com/7262/7712888590_fa13188c42.jpg)
 
-Ingredients:
-3 cups rolled oats
-1 cup brown sugar
-2 tsp. ground cinnamon
-2 tsp. baking powder
-1 tsp. salt
-1 cup milk
-2 eggs
-1/2 cup melted butter
-2 tsp. vanilla extract
-3/4 cup dried cranberries
+### Ingredients
+
+|  Ingredient          | Amount   |
+|:---------------------|:---------|
+| Rolled Oats          | 3 cups   |
+| Brown Sugar          | 1 cup    |
+| Ground Cinnamon      | 2 tsp.   |
+| Baking Powder        | 2 tsp.   |
+| Salt                 | 1 tsp.   |
+| Milk                 | 1 cup    |
+| Eggs                 | 2 eggs   |
+| Melted Butter        | 1/2 cup  |
+| Vanilla Extract      | 2 tsp.   |
+| Dried Cranberries    | 3/4 cup  |
+
+### Preparation
 
 1. Mix oats, brown sugar, cinnamon, baking powder, salt.
 2. Beat in milk, eggs, melted butter, and vanilla extract.

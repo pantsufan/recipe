@@ -7,17 +7,22 @@ date: 2021-03-07
 
 ![Molasses](https://live.staticflickr.com/5524/11526185026_9458f0d993_z.jpg)
 
-Ingredients:
-3/4 cup shortening
-1 cup sugar
-1/4 cup preferred molasses
-1 egg
-1/2 tsp. salt
-2 cups flour
-2 tsp. baking soda
-1/2 tsp. ground cloves
-1/2 tsp. ground ginger
-1 tsp. cinnamon
+### Ingredients
+
+|  Ingredient          | Amount   |
+|:---------------------|:---------|
+| Shortening           | 3/4 cup  |
+| Sugar                | 1 cup    |
+| Preferred Molasses   | 1/4 cup  |
+| Egg                  | 1        |
+| Salt                 | 1/2 tsp. |
+| Flour                | 2 cups   |
+| Baking Soda          | 2 tsp.   |
+| Ground Cloves        | 1/2 tsp. |
+| Ground Ginger        | 1/2 tsp. |
+| Cinnamon             | 1 tsp.   |
+
+### Preparation
 
 1. Melt shortening over medium heat in a small saucepan. Cool.
 2. Add sugar, molasses, and egg. Beat well.
