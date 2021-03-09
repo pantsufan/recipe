@@ -1,5 +1,5 @@
 ---
-title: Bebinca Recipe
+title: Bebinca
 date: 2021-02-03
 ---
 

@@ -1,21 +1,21 @@
 ---
-title: No-bake chocolate cheesecake 
+title: No Bake Chocolate Cheesecake
 date: 2021-03-08
 ---
-## A rich, chocolaty cheesecake perfect for all cheesecake and chocolate adicts.
 
+## A rich, chocolaty cheesecake perfect for all cheesecake and chocolate adicts.
 
 ### Ingredients
 
-|  Ingredient   | Amount |
-|:--------------|:-------|
-| Digestive biscuits            | 150g (5 oz)      |
-| Butter             | 45g (1 1/2 oz)      |
-| Caster sugar, divided             | 110g (4 oz)      |
-| Whipping cream             | 120ml      |
-| Dark chocolate, melted and cooled             | 150g (5 oz)      |
-| Cocoa powder mixed with a little hot water             | 2 tablespoons      |
-| Tub cream cheese             | 1 (200g)      |
+| Ingredient                                 | Amount         |
+| :----------------------------------------- | :------------- |
+| Digestive biscuits                         | 150g (5 oz)    |
+| Butter                                     | 45g (1 1/2 oz) |
+| Caster sugar, divided                      | 110g (4 oz)    |
+| Whipping cream                             | 120ml          |
+| Dark chocolate, melted and cooled          | 150g (5 oz)    |
+| Cocoa powder mixed with a little hot water | 2 tablespoons  |
+| Tub cream cheese                           | 1 (200g)       |
 
 ### Preparation
 

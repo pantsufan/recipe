@@ -1,5 +1,5 @@
 ---
-title: Goan Fish Curry Recipe
+title: Goan Fish Curry
 date: 2021-03-07
 ---
 
