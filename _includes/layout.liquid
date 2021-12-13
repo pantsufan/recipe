@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>{{ title }}</title>
   </head>
   <body>
@@ -12,8 +17,7 @@
       <h1>{{ title }}</h1>
       <p>{{ tagline }}</p>
       <nav>
-        <a href="/">Home</a>
-        <a href="/search">Search</a>
+        <a href="/">Home</a> / <a href="/search">Search</a> /
         <a href="/about">About</a>
       </nav>
     </header>
@@ -42,13 +46,13 @@
             const el = document.createElement("li");
             resEl.appendChild(el);
 
-            const h4 = document.createElement("h4");
-            el.appendChild(h4);
+            const p = document.createElement("p");
+            el.appendChild(p);
 
             const a = document.createElement("a");
             a.setAttribute("href", id);
             a.textContent = title;
-            h4.appendChild(a);
+            p.appendChild(a);
           });
         } else {
           noResultsEl.style.display = "block";

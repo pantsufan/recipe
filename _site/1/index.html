@@ -4,34 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <title>Recipes</title>
   </head>
   <body>
-    <header>
-      <h1>Recipes</h1>
-      <p>Find Recipes Without Bloat</p>
+
+    <header class="container">
+      <hgroup>
+        <h1>Recipes</h1>
+        <h2>Find Recipes Without Bloat</h2>
+      </hgroup>
       <nav>
-        <a href="/">Home</a>
-        <a href="/search">Search</a>
-        <a href="/about">About</a>
+        <ul>
+          <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/about">About</a></li>
+        </ul>
       </nav>
     </header>
-    <main>
+    <!-- Main -->
+    <main class="container">
+
       <h1>All Recipes</h1>
 <ul>
 <li>
-<p><a href="/recipe/2021/Goan-Fish-Curry-Recipe/">Goan Fish Curry Recipe</a>
-<small>Sun, Mar 07, 21</small></p>
+<p><a href="/recipe/2021/No-bake-Chocolate-Cheesecake/">No Bake Chocolate Cheesecake</a>
+<small>Mon, Mar 08, 21</small></p>
 </li>
 <li>
-<p><a href="/recipe/2021/Bebinca-Recipe/">Bebinca Recipe</a>
-<small>Wed, Feb 03, 21</small></p>
+<p><a href="/recipe/2021/Baked-Oatmeal-Recipe/">Baked Oatmeal</a>
+<small>Mon, Mar 08, 21</small></p>
 </li>
 </ul>
 <div style="display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;"><a href="/"><button>Previous Page</button></a></div>
+  justify-content: space-between;"><a href="/"><button>Previous Page</button></a><a href="/2/"><button>Next Page</button> </a></div>
 
     </main>
   </body>
@@ -51,7 +58,6 @@
 
         resEl.innerHTML = "";
         if (results) {
-          noResultsEl.style.display = "none";
           results.map((r) => {
             const { id, title } = r.doc;
             const el = document.createElement("li");

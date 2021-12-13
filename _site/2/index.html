@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>Recipes</title>
+  </head>
+  <body>
+
+    <header class="container">
+      <hgroup>
+        <h1>Recipes</h1>
+        <h2>Find Recipes Without Bloat</h2>
+      </hgroup>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main class="container">
+
+      <h1>All Recipes</h1>
+<ul>
+<li>
+<p><a href="/recipe/2021/molasses-cookies-recipe/">Molasses Cookies</a>
+<small>Sun, Mar 07, 21</small></p>
+</li>
+<li>
+<p><a href="/recipe/2021/Goan-Fish-Curry-Recipe/">Goan Fish Curry</a>
+<small>Sun, Mar 07, 21</small></p>
+</li>
+</ul>
+<div style="display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;"><a href="/1/"><button>Previous Page</button></a><a href="/3/"><button>Next Page</button> </a></div>
+
+    </main>
+  </body>
+  <!-- Script for searching -->
+  <script type="text/javascript">
+    (function (window, document) {
+      "use strict";
+
+      const search = (e) => {
+        const results = window.searchIndex.search(e.target.value, {
+          bool: "OR",
+          expand: true,
+        });
+
+        const resEl = document.getElementById("searchResults");
+        const noResultsEl = document.getElementById("noResultsFound");
+
+        resEl.innerHTML = "";
+        if (results) {
+          results.map((r) => {
+            const { id, title } = r.doc;
+            const el = document.createElement("li");
+            resEl.appendChild(el);
+
+            const h4 = document.createElement("h4");
+            el.appendChild(h4);
+
+            const a = document.createElement("a");
+            a.setAttribute("href", id);
+            a.textContent = title;
+            h4.appendChild(a);
+          });
+        } else {
+          noResultsEl.style.display = "block";
+        }
+      };
+
+      fetch("/search-index.json").then((response) =>
+        response.json().then((rawIndex) => {
+          window.searchIndex = elasticlunr.Index.load(rawIndex);
+          document
+            .getElementById("searchField")
+            .addEventListener("input", search);
+        })
+      );
+    })(window, document);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+</html>

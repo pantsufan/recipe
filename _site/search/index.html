@@ -4,27 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
-    <title>Search</title>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Search For Recipes</title>
   </head>
   <body>
     <header>
-      <h1>Search</h1>
+      <h1>Search For Recipes</h1>
       <p></p>
       <nav>
-        <a href="/">Home</a>
-        <a href="/search">Search</a>
+        <a href="/">Home</a> / <a href="/search">Search</a> /
         <a href="/about">About</a>
       </nav>
     </header>
     <main>
       <div class="field">
-  <label for="searchField">Search</label>
-  <input type="search" placeholder="Search..." id="searchField" />
+  <input type="search" placeholder="Search..." id="searchField" style="width: 100%" />
 </div>
 <ul id="searchResults"></ul>
-<div id="noResultsFound" style="display: none">
-  <p>No results found.</p>
+<div id="noResultsFound" >
 </div>
 
     </main>
@@ -50,13 +52,13 @@
             const el = document.createElement("li");
             resEl.appendChild(el);
 
-            const h4 = document.createElement("h4");
-            el.appendChild(h4);
+            const p = document.createElement("p");
+            el.appendChild(p);
 
             const a = document.createElement("a");
             a.setAttribute("href", id);
             a.textContent = title;
-            h4.appendChild(a);
+            p.appendChild(a);
           });
         } else {
           noResultsEl.style.display = "block";

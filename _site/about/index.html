@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>About</title>
   </head>
   <body>
@@ -12,14 +17,44 @@
       <h1>About</h1>
       <p></p>
       <nav>
-        <a href="/">Home</a>
-        <a href="/search">Search</a>
+        <a href="/">Home</a> / <a href="/search">Search</a> /
         <a href="/about">About</a>
       </nav>
     </header>
     <main>
-      <h2>Recipes</h2>
-<p>Inspired by Luke Smith's video about bloated web. This website is made with Eleventy and Simple CSS</p>
+      <h2>Info</h2>
+<p>Recipes is a community driven website, were users are free to share their favouirte receipes to the world, without the bloated mess such as unwanted JavaScript code and advertisments.</p>
+<h2>How To Share</h2>
+<p>Sharing your receipes is simple and easy, just follow the steps listed below</p>
+<h4>Requiremnts</h4>
+<ul>
+<li>PC or even phone if your dedicated enough</li>
+<li>GitHub Account (with some knowledge of git)</li>
+<li>Knowledge of Markdown ( Don't know? lookup for markdown cheatsheet)</li>
+<li>Text Editor</li>
+</ul>
+<h4>Steps</h4>
+<ul>
+<li>Git clone this website's repo using
+<code>git clone https://github.com/pantsufan/recipe</code>
+If you don't know, lookup on the internet there are tons of guides.</li>
+<li>Open the project in any code editor of choice (for advance users), for new users don't do anything, just open up your text editor and get ready for the next step.</li>
+<li>Now we would create a markdown file, whose extension is <code>.md</code> with file-name of your receipe, for example <code>Cake.md</code></li>
+<li>In markdown file, we first need to enter the meta-data which would tell the site what is our receipe name and date of publish, for that simply copy the below section into your markdown file, making the necessary changes.</li>
+</ul>
+<pre><code>---
+title: Cake
+date: 2021-08-13
+---
+</code></pre>
+<ul>
+<li>Now simple write your recipe with proper steps using markdown syntax (for ingredients use markdown table)</li>
+<li>Great, you made your first recipe post, now the only thing which is left is to share it with the world (new users copy the recipe file into the project's sub-folder called recipe/2021 or create a new folder if year is not present).</li>
+<li>Open terminal or git bash in project folder and commit your changes <code>git commit -m 'Added cake recipe'</code> and the <code>git push</code> and then make a pull request.</li>
+<li>Within few hours your pull request would be merged and your recipe would be live on the website.</li>
+</ul>
+<h4>Credits</h4>
+<p>A huge thanks for all the contributors for sharing their recipes with us</p>
 
     </main>
   </body>
@@ -44,13 +79,13 @@
             const el = document.createElement("li");
             resEl.appendChild(el);
 
-            const h4 = document.createElement("h4");
-            el.appendChild(h4);
+            const p = document.createElement("p");
+            el.appendChild(p);
 
             const a = document.createElement("a");
             a.setAttribute("href", id);
             a.textContent = title;
-            h4.appendChild(a);
+            p.appendChild(a);
           });
         } else {
           noResultsEl.style.display = "block";

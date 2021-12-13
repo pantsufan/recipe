@@ -1,13 +1,12 @@
 ---
-title: Search
+title: Search For Recipes
 layout: layout
 ---
 
 <div class="field">
-  <label for="searchField">Search</label>
-  <input type="search" placeholder="Search..." id="searchField" />
+  <input type="search" placeholder="Search..." id="searchField" style="width: 100%" />
 </div>
 <ul id="searchResults"></ul>
-<div id="noResultsFound" style="display: none">
-  <p>No results found.</p>
+<div id="noResultsFound" >
+  
 </div>
