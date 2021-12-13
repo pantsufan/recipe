@@ -9,7 +9,7 @@ Recipes is a community driven website, were users are free to share their favoui
 
 ## How To Share
 
-Sharing your receipes is simple and easy, just follow the steps listed below
+Sharing your recipes is simple and easy, just follow the steps listed below
 
 #### Requiremnts
 
@@ -24,8 +24,8 @@ Sharing your receipes is simple and easy, just follow the steps listed below
   `git clone https://github.com/pantsufan/recipe`
   If you don't know, lookup on the internet there are tons of guides.
 - Open the project in any code editor of choice (for advance users), for new users don't do anything, just open up your text editor and get ready for the next step.
-- Now we would create a markdown file, whose extension is `.md` with file-name of your receipe, for example `Cake.md`
-- In markdown file, we first need to enter the meta-data which would tell the site what is our receipe name and date of publish, for that simply copy the below section into your markdown file, making the necessary changes.
+- Now we would create a markdown file, whose extension is `.md` with file-name of your recipe, for example `Cake.md`
+- In markdown file, we first need to enter the meta-data which would tell the site what is our recipe name and date of publish, for that simply copy the below section into your markdown file, making the necessary changes.
 
 ```
 ---
