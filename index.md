@@ -9,8 +9,9 @@ layout: layout
 #   reverse: true
 ---
 
-# All Recipes
+## All Recipes
 
+<br/>
 {% for recipe in collections.recipe reversed %}
 
 [{{ recipe.data.title }}]({{recipe.url}})
