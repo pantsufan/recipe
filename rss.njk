@@ -1,0 +1,44 @@
+---json
+{
+  "title": "Recipes",
+  "url": "https://recipe-eight.vercel.app/",
+  "language": "en",
+  "description": "A Community Driven Recipe Platform.",
+  "feed": {
+    "filename": "feed.xml",
+    "path": "/feed.xml",
+    "id": "https://recipe-eight.vercel.app/"
+  },
+  "jsonfeed": {
+    "path": "/post/rss.json",
+    "url": "https://recipe-eight.vercel.app/feed/feed.json"
+  },
+  "author": {
+    "name": "Team Recipes"
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ metadata.title }}</title>
+    <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+    {% set absoluteUrl %}{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
+    <link href="{{ absoluteUrl }}" rel="self"/>
+    <link href="{{ metadata.url }}"/>
+    <updated>{{ collections.recipe | rssLastUpdatedDate }}</updated>
+    <id>{{ metadata.feed.id }}</id>
+    <author>
+        <name>{{ metadata.author.name }}</name>
+        <email>{{ metadata.author.email }}</email>
+    </author>
+    {%- for post in collections.recipe | reverse %}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+        <entry>
+            <title>{{ post.data.title }}</title>
+            <link href="{{ absolutePostUrl }}"/>
+            <updated>{{ post.date | rssDate }}</updated>
+            <id>{{ absolutePostUrl }}</id>
+            <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+        </entry>
+    {%- endfor %}
+</feed>

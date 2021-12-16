@@ -1,14 +1,8 @@
-const searchFilter = require("./searchFilter");
-
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function (config) {
+  config.addPlugin(pluginRss);
   config.addPassthroughCopy("./js");
   config.addPassthroughCopy("css");
-
-  config.addFilter("search", searchFilter);
-
-  config.addCollection("recipe", (collection) => {
-    return [...collection.getFilteredByGlob("./recipe/**/*.md")];
-  });
 
   return {
     passthroughFileCopy: true,
