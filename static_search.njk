@@ -1,0 +1,13 @@
+---
+permalink: '/search.json'
+---
+
+[  
+  {% for post in collections.recipe %} 
+  { 
+    "title":"{{ post.data.title }}",
+    "url":"{{ post.url | url }}" 
+  }
+  {% if loop.last == false %},{% endif %}
+{% endfor %}
+]

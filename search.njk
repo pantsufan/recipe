@@ -1,0 +1,69 @@
+---
+title: Search 
+tagline: For Recipes Submitted By Our Users
+permalink: /search/
+layout: layout
+---
+
+{% block content %}
+    <main id="main-content" tabindex="-1">
+        <section class="[ post__body ] [ pad-top-700 gap-bottom-900 ]">
+            <div class="[ inner-wrapper ] [ sf-flow ]">
+                <input autocomplete="off" type="search" id="search" placeholder="Search for tips" style="width: 100%"/>
+                <ul id="results"></ul>
+            </div>
+        </section>
+    </main>
+    <script defer type="text/javascript" >
+        document.addEventListener('DOMContentLoaded', function (event) {
+            const search = document.getElementById('search');
+            const results = document.getElementById('results');
+            let data = [];
+            let search_term = '';
+            fetch('/search.json')
+                .then(response => response.json())
+                .then(data_server => {
+                    data = data_server;
+                });
+            search.addEventListener('input', event => {
+                search_term = event
+                    .target
+                    .value
+                    .toLowerCase();
+                showList();
+            });
+            const showList = () => {
+                results.innerHTML = '';
+                if (search_term.length <= 0) 
+                    return;
+                const match = new RegExp(`${search_term}`, 'gi');
+                let result = data.filter(name => match.test(name.title));
+                if (result.length == 0) {
+                    const li = document.createElement('li');
+                    li.innerHTML = `No recipe found 😢`;
+                    results.appendChild(li);
+                }
+                result.forEach(e => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${e.url}">${e.title}</a>`;
+                    results.appendChild(li);
+                });
+            };
+            results.innerHTML = '';
+            if (search_term.length <= 0) 
+                return;
+            const match = new RegExp(`${search_term}`, 'gi');
+            let result = data.filter(name => match.test(name.title));
+            if (result.length == 0) {
+                const li = document.createElement('li');
+                li.innerHTML = `No results found 😢`;
+                results.appendChild(li);
+                result.forEach(e => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${e.url}">${e.title}</a>`;
+                    results.appendChild(li);
+                });
+            }
+        });
+    </script>
+{% endblock %}
