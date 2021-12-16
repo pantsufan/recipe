@@ -1,6 +1,7 @@
 ---
 title: About
 layout: layout
+tagline: Get To Know The Project
 ---
 
 ## Info
