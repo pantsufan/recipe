@@ -12,8 +12,5 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-rss": "^1.1.2"
-  },
-  "dependencies": {
-    "elasticlunr": "^0.9.5"
   }
 }
